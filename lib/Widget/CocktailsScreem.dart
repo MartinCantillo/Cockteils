@@ -41,15 +41,64 @@ class _CocktailScreemState extends State<CocktailScreem> {
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           return ListTile(
-                            title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(data[index].idDrink),
-                                  Text(data[index].strDrink),
-                                  Text(data[index].strTags),
-                                  Text(data[index].strTags),
-                                ]),
-                          );
+  title: Text(
+    data[index].strDrink,
+    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+  ),
+  subtitle: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      SizedBox(height: 4.0),
+      Row(
+        children: [
+          Icon(Icons.confirmation_number, size: 16.0),
+          Text(' ID: ${data[index].idDrink}', style: TextStyle(fontSize: 14.0)),
+        ],
+      ),
+      Row(
+        children: [
+          Icon(Icons.category, size: 16.0),
+          Text(' Categoría: ${data[index].strCategory}', style: TextStyle(fontSize: 14.0)),
+        ],
+      ),
+      Row(
+        children: [
+          Icon(Icons.liquor, size: 16.0),
+          Text(' Tipo: ${data[index].strAlcoholic}', style: TextStyle(fontSize: 14.0)),
+        ],
+      ),
+      Row(
+        children: [
+          Icon(Icons.tag, size: 16.0),
+          Text(' Tags: ${data[index].strTags}', style: TextStyle(fontSize: 14.0)),
+        ],
+      ),
+      Row(
+        children: [
+          Icon(Icons.local_bar, size: 16.0),
+          Text(' IBA: ${data[index].strIBA}', style: TextStyle(fontSize: 14.0)),
+        ],
+      ),
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.directions, size: 16.0),
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                ' Instrucciones: ${data[index].strInstructions}',
+                style: TextStyle(fontSize: 14.0),
+              ),
+            ),
+          ),
+        ],
+      ),
+      
+    ],
+  ),
+);
+
                         });
                   }
                 })));

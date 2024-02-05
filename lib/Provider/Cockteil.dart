@@ -8,6 +8,7 @@ class Cockteils {
   final String strIBA;
   final String strAlcoholic;
   final String strInstructions;
+  /*
   final String strInstructionsDE;
   final String strInstructionsIT;
   final String strDrinkThumb;
@@ -21,7 +22,7 @@ class Cockteils {
   final String strImageAttribution;
   final String strCreativeCommonsConfirmed;
   final String dateModified;
-
+*/
   Cockteils(
       {required this.idDrink,
       required this.strDrink,
@@ -29,7 +30,8 @@ class Cockteils {
       required this.strCategory,
       required this.strIBA,
       required this.strAlcoholic,
-      required this.strInstructions,
+      required this.strInstructions
+      /*
       required this.strInstructionsDE,
       required this.strInstructionsIT,
       required this.strDrinkThumb,
@@ -42,16 +44,18 @@ class Cockteils {
       required this.strImageSource,
       required this.strImageAttribution,
       required this.strCreativeCommonsConfirmed,
-      required this.dateModified});
+      required this.dateModified
+      */});
   factory Cockteils.fromJson(Map<String, dynamic> json) {
     return Cockteils(
-        idDrink: json['idDrink'],
-        strDrink: json['strDrink'],
-        strTags: json['strTags'],
-        strCategory: json['strCategory'],
-        strIBA: json['strIBA'],
-        strAlcoholic: json['strAlcoholic'],
-        strInstructions: json['strInstructions'],
+        idDrink: json['idDrink']?? '',
+        strDrink: json['strDrink']?? '',
+        strTags: json['strTags']?? '',
+        strCategory: json['strCategory']?? '',
+        strIBA: json['strIBA']?? '',
+        strAlcoholic: json['strAlcoholic']?? '',
+        strInstructions: json['strInstructions']?? '',
+        /*
         strInstructionsDE: json['strInstructionsDE'],
         strInstructionsIT: json['strInstructionsIT'],
         strDrinkThumb: json['strDrinkThumb'],
@@ -64,6 +68,7 @@ class Cockteils {
         strImageSource: json['strImageSource'],
         strImageAttribution: json['strImageAttribution'],
         strCreativeCommonsConfirmed: json['strCreativeCommonsConfirmed'],
-        dateModified: json['dateModified']);
+        dateModified: json['dateModified']
+        */);
   }
 }
